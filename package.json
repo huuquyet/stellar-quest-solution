@@ -6,10 +6,16 @@
   "keywords": [],
   "author": "Quyet",
   "private": true,
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "quest11": "tsc && yarn node dist/series1/quest1"
+  },
+  "dependencies": {
+    "stellar-sdk": "^10.4.1"
   },
   "devDependencies": {
+    "@types/node": "^20.8.9",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2"
   },
