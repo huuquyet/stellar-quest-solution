@@ -11,7 +11,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "quest11": "tsc && yarn node dist/series1/quest1",
     "quest12": "tsc && yarn node dist/series1/quest2",
-    "quest13": "tsc && yarn node dist/series1/quest3"
+    "quest13": "tsc && yarn node dist/series1/quest3",
+    "quest14": "tsc && yarn node dist/series1/quest4"
   },
   "dependencies": {
     "stellar-sdk": "^10.4.1"
