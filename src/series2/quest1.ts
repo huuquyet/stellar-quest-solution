@@ -1,4 +1,4 @@
-import { Keypair, Server, TransactionBuilder, Networks, Operation, BASE_FEE } from 'stellar-sdk';
+import { BASE_FEE, Keypair, Networks, Operation, Server, TransactionBuilder } from 'stellar-sdk';
 
 /* TODO (1): create your two keypairs and make sure they are both funded */
 const questKeypair = Keypair.fromSecret('SECRET_KEY_HERE');
@@ -8,7 +8,7 @@ await Promise.all(
   [questKeypair, destinationKeypair].map(async (kp) => {
     // Set up the Friendbot URL endpoints.
     const friendbotUrl = `https://friendbot.stellar.org?addr=${kp.publicKey()}`;
-    let response = await fetch(friendbotUrl);
+    const response = await fetch(friendbotUrl);
 
     // // Optional Looking at the responses from fetch.
     // let json = await response.json()

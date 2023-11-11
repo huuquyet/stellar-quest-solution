@@ -1,12 +1,12 @@
 import {
   /* TODO (1): import anything you'll need from the stellar-sdk */
-  Keypair,
-  Server,
-  TransactionBuilder,
-  Networks,
-  Operation,
   Asset,
   BASE_FEE,
+  Keypair,
+  Networks,
+  Operation,
+  Server,
+  TransactionBuilder,
 } from 'stellar-sdk';
 
 /* TODO (2): setup your quest keypair, fund it using any method you like */
@@ -16,7 +16,7 @@ await Promise.all(
   [questKeypair].map(async (kp) => {
     // Set up the Friendbot URL endpoints.
     const friendbotUrl = `https://friendbot.stellar.org?addr=${kp.publicKey()}`;
-    let response = await fetch(friendbotUrl);
+    const response = await fetch(friendbotUrl);
 
     // // Optional Looking at the responses from fetch.
     // let json = await response.json()
@@ -86,7 +86,7 @@ const transaction = new TransactionBuilder(questAccount, {
 transaction.sign(questKeypair);
 
 try {
-  let res = await server.submitTransaction(transaction);
+  const res = await server.submitTransaction(transaction);
   console.log(`Transaction Successful! Hash: ${res.hash}`);
 } catch (error: any) {
   console.log(`${error}. More details:\n${JSON.stringify(error.response.data.extras, null, 2)}`);

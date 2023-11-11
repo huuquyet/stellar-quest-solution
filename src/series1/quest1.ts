@@ -1,4 +1,4 @@
-import { Keypair, Networks, Operation, Server, TransactionBuilder, BASE_FEE } from 'stellar-sdk';
+import { BASE_FEE, Keypair, Networks, Operation, Server, TransactionBuilder } from 'stellar-sdk';
 
 const questKeypair = Keypair.fromSecret('SECRET_KEY_HERE');
 /* TODO (2): create a new keypair here to serve as the account to be created */
@@ -10,7 +10,7 @@ await Promise.all(
   [questKeypair].map(async (kp) => {
     // Set up the Friendbot URL endpoints.
     const friendbotUrl = `https://friendbot.stellar.org?addr=${kp.publicKey()}`;
-    let response = await fetch(friendbotUrl);
+    const response = await fetch(friendbotUrl);
 
     // // Optional Looking at the responses from fetch.
     // let json = await response.json()
