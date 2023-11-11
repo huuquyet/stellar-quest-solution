@@ -1,19 +1,23 @@
-import {
-  Asset,
-  BASE_FEE,
-  Keypair,
-  Networks,
-  Operation,
-  Server,
-  TransactionBuilder,
-} from 'stellar-sdk';
+// exports.endpoint = function(request, response) {
+//   const tomlData = `VERSION = "0.1.0"
+// NETWORK_PASSPHRASE = "Test SDF Network ; September 2015"
+// ACCOUNTS = [
+//   "REPLACE_WITH_YOUR_QUEST_ACCOUNT_PUBLIC_KEY"
+// ]`
+//   response.writeHead(200, {
+//     'Access-Control-Allow-Origin': '*',
+//     'Content-Type': 'text/plain'
+//   })
+//   response.end(tomlData)
+// }
 
-/* TODO (2): get your two keypairs ready, don't forget to have them funded */
+import { BASE_FEE, Keypair, Networks, Operation, Server, TransactionBuilder } from 'stellar-sdk';
+
+/* TODO (3): setup your keypair, server, and load your account */
 const questKeypair = Keypair.fromSecret('SECRET_KEY_HERE');
-const issuerKeypair = Keypair.random();
 
 await Promise.all(
-  [questKeypair, issuerKeypair].map(async (kp) => {
+  [questKeypair].map(async (kp) => {
     // Set up the Friendbot URL endpoints.
     const friendbotUrl = `https://friendbot.stellar.org?addr=${kp.publicKey()}`;
     const response = await fetch(friendbotUrl);
@@ -31,32 +35,24 @@ await Promise.all(
   })
 );
 
-/* TODO (3): set up your server connection and load up your quest account */
 const server = new Server('https://horizon-testnet.stellar.org');
 const questAccount = await server.loadAccount(questKeypair.publicKey());
 
-/* TODO (4): Create your asset below. Use any code you like! */
-const santaAsset = new Asset(
-  /* put your asset information here */
-  'SANTA',
-  issuerKeypair.publicKey()
-);
+/* TODO (4): */
 const transaction = new TransactionBuilder(questAccount, {
   fee: BASE_FEE,
   networkPassphrase: Networks.TESTNET,
 })
-  /* TODO (5): build your transaction containing the changeTrust operation */
+  /* add your operation here */
   .addOperation(
-    Operation.changeTrust({
-      asset: santaAsset,
-      limit: '100',
-      source: questKeypair.publicKey(),
+    Operation.setOptions({
+      homeDomain: 'ty1ejmglvxfu.runkit.sh' /* replace runkit link here */,
     })
   )
   .setTimeout(30)
   .build();
 
-/* TODO (6): Sign and submit your transaction to the network. */
+/* TODO (5): sign and submit your transaction to the testnet */
 transaction.sign(questKeypair);
 
 try {
