@@ -6,7 +6,7 @@
 
   "files": {
     "ignoreUnknown": true,
-    "ignore": ["node_modules", ".pnp*", ".git", "dist", "types", "build"]
+    "ignore": ["node_modules", ".yarn", ".pnp*", ".git", "dist", "types", "build"]
   },
   "linter": {
     "enabled": true,

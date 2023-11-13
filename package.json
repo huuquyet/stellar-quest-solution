@@ -10,7 +10,7 @@
   "scripts": {
     "doctor": "yarn dlx @yarnpkg/doctor",
     "clean": "yarn cache clean --all && npx npkill",
-    "vscode": "yarn dlx @yarnpkg/sdks vscode",
+    "vscode": "yarn install && yarn dlx @yarnpkg/sdks vscode",
     "lint": "yarn dlx @biomejs/biome check --apply .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "quest11": "tsc && yarn node dist/series1/quest1",
@@ -21,7 +21,8 @@
     "quest21": "tsc && yarn node dist/series2/quest1",
     "quest22": "tsc && yarn node dist/series2/quest2",
     "quest23": "tsc && yarn node dist/series2/quest3",
-    "quest24": "tsc && yarn node dist/series2/quest4"
+    "quest24": "tsc && yarn node dist/series2/quest4",
+    "quest25": "tsc && yarn node dist/series2/quest5"
   },
   "dependencies": {
     "stellar-sdk": "^10.4.1"
