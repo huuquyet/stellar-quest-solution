@@ -27,7 +27,8 @@
     "quest32": "tsc && yarn node dist/series3/quest2",
     "quest33": "tsc && yarn node dist/series3/quest3",
     "quest34": "tsc && yarn node dist/series3/quest4",
-    "quest35": "tsc && yarn node dist/series3/quest5"
+    "quest35": "tsc && yarn node dist/series3/quest5",
+    "sidequest1": "tsc && yarn node dist/sidequests/quest1"
   },
   "dependencies": {
     "stellar-sdk": "^10.4.1"
