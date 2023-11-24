@@ -1,6 +1,6 @@
 // Include the StellarSDK and some other utilities.
 
-import fs from 'fs';
+import { readFileSync } from 'node:fs';
 import { Blob, NFTStorage } from 'nft.storage';
 import {
   Asset,
@@ -45,7 +45,7 @@ const NFT_STORAGE_TOKEN = 'your_api_key'; // Get this from https://nft.storage/m
 const IMAGE_PATH = 'assets/nft.jpg';
 const client = new NFTStorage({ token: NFT_STORAGE_TOKEN });
 
-const imageCID = await client.storeBlob(new Blob([fs.readFileSync(IMAGE_PATH)]));
+const imageCID = await client.storeBlob(new Blob([readFileSync(IMAGE_PATH)]));
 console.log(`imageCID: ${imageCID}`);
 
 const metadata = {
