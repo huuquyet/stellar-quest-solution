@@ -29,7 +29,8 @@
     "quest34": "tsc && yarn node dist/series3/quest4",
     "quest35": "tsc && yarn node dist/series3/quest5",
     "sidequest1": "tsc && yarn node dist/sidequests/quest1",
-    "sidequest2": "tsc && yarn node dist/sidequests/quest2"
+    "sidequest2": "tsc && yarn node dist/sidequests/quest2",
+    "sidequest3": "tsc && yarn node dist/sidequests/quest3"
   },
   "dependencies": {
     "nft.storage": "^7.1.1",
