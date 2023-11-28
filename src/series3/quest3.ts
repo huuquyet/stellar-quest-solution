@@ -24,7 +24,7 @@ await Promise.all(
     const response = await fetch(friendbotUrl);
 
     // // Optional Looking at the responses from fetch.
-    // let json = await response.json()
+    // const json = await response.json()
     // console.log(json)
 
     // Check that the response is OK, and give a confirmation message.
@@ -81,8 +81,8 @@ const transaction = new TransactionBuilder(questAccount, {
 transaction.sign(questKeypair);
 
 try {
-  const res1 = await server.submitTransaction(transaction);
-  console.log(`Transaction Successful! Hash: ${res1.hash}`);
+  const res = await server.submitTransaction(transaction);
+  console.log(`Transaction Successful! Hash: ${res.hash}`);
 
   /* TODO (5): use one of the two techniques below to grab your `claimableBalanceId` */
 
@@ -91,12 +91,12 @@ try {
   // claimableBalanceId = res['_embedded'].records.id
   // This assumes the claimant has exactly one claimable balance available.
   // If this is not the case, you may need to parse the `res.records` array.
-  const res2 = await server
+  const claimableRes = await server
     .claimableBalances()
     .claimant(claimantKeypair.publicKey())
     .limit(1)
     .call();
-  const claimableBalanceId = res2.records[0].id;
+  const claimableBalanceId = claimableRes.records[0].id;
 
   // option 2 - get it from the transaction we built previously
   // claimableBalanceId = await server.claimableBalanceId(transaction).call()
@@ -118,7 +118,7 @@ await Promise.all(
     const response = await fetch(friendbotUrl);
 
     // // Optional Looking at the responses from fetch.
-    // let json = await response.json()
+    // const json = await response.json()
     // console.log(json)
 
     // Check that the response is OK, and give a confirmation message.
@@ -148,34 +148,38 @@ const claimTransaction = new TransactionBuilder(claimantAccount, {
 claimTransaction.sign(claimantKeypair);
 
 try {
-  const res3 = await server.submitTransaction(claimTransaction);
-  console.log(`Balance Successfully Claimed! Hash: ${res3.hash}`);
+  const res = await server.submitTransaction(claimTransaction);
+  console.log(`Balance Successfully Claimed! Hash: ${res.hash}`);
 } catch (error: any) {
   console.log(`${error}. More details:\n${JSON.stringify(error.response.data.extras, null, 2)}`);
 }
 
 // claim all unconditional predicates
-const questTransaction = new TransactionBuilder(questAccount, {
+const questTrans = new TransactionBuilder(questAccount, {
   fee: BASE_FEE,
   networkPassphrase: Networks.TESTNET,
-});
+}).setTimeout(30);
 
-const res4 = await server.claimableBalances().claimant(questKeypair.publicKey()).limit(200).call();
-for (const claimableId of res4.records) {
+const claimAllRes = await server
+  .claimableBalances()
+  .claimant(questKeypair.publicKey())
+  .limit(200)
+  .call();
+for (const claimableId of claimAllRes.records) {
   console.log(`Claimable Balance ID: ${claimableId.id}`);
-  questTransaction.addOperation(
+  questTrans.addOperation(
     Operation.claimClaimableBalance({
       balanceId: claimableId.id,
     })
   );
 }
-const questTransaction1 = questTransaction.setTimeout(30).build();
+const questTransaction = questTrans.build();
 
-questTransaction1.sign(questKeypair);
+questTransaction.sign(questKeypair);
 
 try {
-  const res5 = await server.submitTransaction(questTransaction1);
-  console.log(`Balance Successfully Claimed! Hash: ${res5.hash}`);
+  const res = await server.submitTransaction(questTransaction);
+  console.log(`Balance Successfully Claimed! Hash: ${res.hash}`);
 } catch (error: any) {
   console.log(`${error}. More details:\n${JSON.stringify(error.response.data.extras, null, 2)}`);
 }

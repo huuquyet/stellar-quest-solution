@@ -23,7 +23,7 @@ await Promise.all(
     const response = await fetch(friendbotUrl);
 
     // // Optional Looking at the responses from fetch.
-    // let json = await response.json()
+    // const json = await response.json()
     // console.log(json)
 
     // Check that the response is OK, and give a confirmation message.
@@ -81,7 +81,7 @@ try {
   console.log(`Transaction Successful! Hash: ${res.hash}`);
   /* Tip: If you want to immediately submit this second transaction, right here
    * would be an excellent place to build, sign, and submit that transaction */
-  const transaction1 = new TransactionBuilder(questAccount, {
+  const nextTransaction = new TransactionBuilder(questAccount, {
     fee: BASE_FEE,
     networkPassphrase: Networks.TESTNET,
   })
@@ -93,9 +93,9 @@ try {
     .setTimeout(30)
     .build();
 
-  transaction1.sign(questKeypair, secondSigner, thirdSigner);
-  const res1 = await server.submitTransaction(transaction1);
-  console.log(`Transaction Successful! Hash: ${res1.hash}`);
+  nextTransaction.sign(questKeypair, secondSigner, thirdSigner);
+  const nextRes = await server.submitTransaction(nextTransaction);
+  console.log(`Transaction Successful! Hash: ${nextRes.hash}`);
 } catch (error: any) {
   console.log(`${error}. More details:\n${JSON.stringify(error.response.data.extras, null, 2)}`);
 }

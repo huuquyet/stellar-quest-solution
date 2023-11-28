@@ -43,10 +43,10 @@ const server = new Server('https://horizon-testnet.stellar.org');
 const questAccount = await server.loadAccount(questKeypair.publicKey());
 
 // Begin building the transaction. We will add the payment operations in a bit
-const transaction = new TransactionBuilder(questAccount, {
+const transBuilder = new TransactionBuilder(questAccount, {
   fee: BASE_FEE,
   networkPassphrase: Networks.TESTNET,
-});
+}).setTimeout(30);
 
 // Different muxed accounts can all operate on an underlying account's sequence
 // number. So, we need to load the `familyAccount` from the server before we can
@@ -66,7 +66,7 @@ for (const familyMember of familyMuxedAccounts) {
   // // Optional: log the muxed account details
   // console.log(`${familyMember.id().padStart(4, " ")}: ${familyMember.accountId()}`)
 
-  transaction.addOperation(
+  transBuilder.addOperation(
     Operation.payment({
       destination: familyMember.accountId(),
       asset: Asset.native(),
@@ -79,14 +79,14 @@ for (const familyMember of familyMuxedAccounts) {
 }
 
 // `setTimeout` is required for a transaction, and it also must be built.
-const transaction1 = transaction.setTimeout(30).build();
+const transaction = transBuilder.build();
 
 // Our example transaction only requires the signature of the quest keypair.
-transaction1.sign(questKeypair);
+transaction.sign(questKeypair);
 
 // Submit the transaction to the testnet network.
 try {
-  const res = await server.submitTransaction(transaction1);
+  const res = await server.submitTransaction(transaction);
   console.log(`Transaction Successful! Hash: ${res.hash}`);
 } catch (error: any) {
   console.log(`${error}. More details:\n${JSON.stringify(error.response.data.extras, null, 2)}`);
