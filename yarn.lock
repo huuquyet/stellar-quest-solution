@@ -271,9 +271,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stellar/stellar-base@npm:10.0.0":
-  version: 10.0.0
-  resolution: "@stellar/stellar-base@npm:10.0.0"
+"@stellar/stellar-base@npm:10.0.1":
+  version: 10.0.1
+  resolution: "@stellar/stellar-base@npm:10.0.1"
   dependencies:
     "@stellar/js-xdr": "npm:^3.0.1"
     base32.js: "npm:^0.1.0"
@@ -285,7 +285,7 @@ __metadata:
   dependenciesMeta:
     sodium-native:
       optional: true
-  checksum: 80d5793238c2eeadaf4eff48cea4bd415ece4774a30960586ddb5ed95a56561e58ea13b83163c5872b97579ed65d75d73ffc33807ad68c81764c43aae18eb69f
+  checksum: 37d7f3594830e4e91693fa8b5b0b17ee0081a282711e63d6e6e29f8f6b321db419fada65f923fdc1b06f5f246b8cfb5c27ef54866ae0fb746c71b6f35e214174
   languageName: node
   linkType: hard
 
@@ -326,12 +326,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.10.4":
-  version: 20.10.4
-  resolution: "@types/node@npm:20.10.4"
+"@types/node@npm:^20.10.5":
+  version: 20.10.5
+  resolution: "@types/node@npm:20.10.5"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 2c8b70cba731eb2ae3ae046daa74903bfcbb0e7b9196da767e5895054f6d252296ae7a04fb1dbbcb53bb004c4c658c05eaea2731bc9e2dd9e08f7e88d672f563
+  checksum: be30609aae0bfe492097815f166ccc07f465220cb604647fa4e5ec05a1d16c012a41b82b5f11ecfe2485cbb479d4d20384b95b809ca0bcff6d94d5bbafa645bb
   languageName: node
   linkType: hard
 
@@ -2813,26 +2813,26 @@ __metadata:
   resolution: "stellar-quest-solution@workspace:."
   dependencies:
     "@biomejs/biome": "npm:^1.4.1"
-    "@types/node": "npm:^20.10.4"
+    "@types/node": "npm:^20.10.5"
     nft.storage: "npm:^7.1.1"
     soroban-client: "npm:^1.0.0"
-    stellar-sdk: "npm:^11.0.1"
+    stellar-sdk: "npm:^11.1.0"
     typescript: "npm:^5.3.3"
   languageName: unknown
   linkType: soft
 
-"stellar-sdk@npm:^11.0.1":
-  version: 11.0.1
-  resolution: "stellar-sdk@npm:11.0.1"
+"stellar-sdk@npm:^11.1.0":
+  version: 11.1.0
+  resolution: "stellar-sdk@npm:11.1.0"
   dependencies:
-    "@stellar/stellar-base": "npm:10.0.0"
+    "@stellar/stellar-base": "npm:10.0.1"
     axios: "npm:^1.6.0"
     bignumber.js: "npm:^9.1.2"
     eventsource: "npm:^2.0.2"
     randombytes: "npm:^2.1.0"
     toml: "npm:^3.0.0"
     urijs: "npm:^1.19.1"
-  checksum: a4eb63ef69cdc0aec120d7d8f0420a08bda3ff29ce58d9e4a189c547d34c84da2b5afaa6a840a55afadbd527129214845079ff479cd4f9c1fa6f7b613bb47688
+  checksum: 07718ead15a496a589281ee8e9575486f5f2152fd3408f97800961955ede5aeefc10a7192dddaf14e9b6a5a3bde69cb31796beacd0d8c4d5f93af5b4e5cd2aaa
   languageName: node
   linkType: hard
 
