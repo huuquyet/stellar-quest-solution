@@ -1,13 +1,13 @@
+/* TODO (1): import anything you'll need from the stellar-sdk */
 import {
-  /* TODO (1): import anything you'll need from the stellar-sdk */
   Asset,
   BASE_FEE,
+  Horizon,
   Keypair,
   Networks,
   Operation,
-  Server,
   TransactionBuilder,
-} from 'stellar-sdk';
+} from '@stellar/stellar-sdk';
 
 /* TODO (2): setup your quest keypair, fund it using any method you like */
 const questKeypair = Keypair.fromSecret('SECRET_KEY_HERE');
@@ -19,7 +19,7 @@ await Promise.all(
     const response = await fetch(friendbotUrl);
 
     // // Optional Looking at the responses from fetch.
-    // let json = await response.json()
+    // const json = await response.json()
     // console.log(json)
 
     // Check that the response is OK, and give a confirmation message.
@@ -32,7 +32,7 @@ await Promise.all(
 );
 
 /* TODO (2):  set up your server connection and load up your quest account */
-const server = new Server('https://horizon-testnet.stellar.org');
+const server = new Horizon.Server('https://horizon-testnet.stellar.org');
 const questAccount = await server.loadAccount(questKeypair.publicKey());
 
 /* TODO (3): set the asset you will be using to counter your XLM offer */

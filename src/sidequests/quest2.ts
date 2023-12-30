@@ -1,16 +1,16 @@
 // Include the StellarSDK and some other utilities.
 
 import { readFileSync } from 'node:fs';
-import { Blob, NFTStorage } from 'nft.storage';
 import {
   Asset,
   BASE_FEE,
+  Horizon,
   Keypair,
   Networks,
   Operation,
-  Server,
   TransactionBuilder,
-} from 'stellar-sdk';
+} from '@stellar/stellar-sdk';
+import { Blob, NFTStorage } from 'nft.storage';
 
 // Generate two Keypairs: one for issuing the NFT, and one for receiving it.
 const issuerKeypair = Keypair.random();
@@ -25,7 +25,7 @@ await Promise.all(
     const response = await fetch(friendbotUrl);
 
     // // Optional Looking at the responses from fetch.
-    // let json = await response.json()
+    // const json = await response.json()
     // console.log(json)
 
     // Check that the response is OK, and give a confirmation message.
@@ -59,7 +59,7 @@ const metadataCID = await client.storeBlob(new Blob([JSON.stringify(metadata)]))
 console.log(`metadataCID: ${metadataCID}`);
 
 // Connect to the testnet with the StellarSdk.
-const server = new Server('https://horizon-testnet.stellar.org');
+const server = new Horizon.Server('https://horizon-testnet.stellar.org');
 const account = await server.loadAccount(issuerKeypair.publicKey());
 
 // Build a transaction that mints the NFT.
@@ -100,8 +100,8 @@ const transaction = new TransactionBuilder(account, {
 transaction.sign(issuerKeypair, receiverKeypair);
 
 try {
-  await server.submitTransaction(transaction);
-  console.log('The asset has been issued to the receiver');
+  const res = await server.submitTransaction(transaction);
+  console.log(`The asset has been issued to the receiver.\nTransaction hash: ${res.hash}`);
 } catch (error: any) {
   console.log(`${error}. More details: \n${error.response.data}`);
 }

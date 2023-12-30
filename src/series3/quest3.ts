@@ -3,12 +3,12 @@ import {
   Asset,
   BASE_FEE,
   Claimant,
+  Horizon,
   Keypair,
   Networks,
   Operation,
-  Server,
   TransactionBuilder,
-} from 'stellar-sdk';
+} from '@stellar/stellar-sdk';
 
 const questKeypair = Keypair.fromSecret('SECRET_KEY_HERE');
 const claimantKeypair = Keypair.random(); // reminder: save this keypair info for later use
@@ -36,7 +36,7 @@ await Promise.all(
   })
 );
 
-const server = new Server('https://horizon-testnet.stellar.org');
+const server = new Horizon.Server('https://horizon-testnet.stellar.org');
 const questAccount = await server.loadAccount(questKeypair.publicKey());
 
 /*const server = Server({

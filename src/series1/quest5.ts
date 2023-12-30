@@ -1,13 +1,13 @@
+/* TODO (1): import anything you'll need from the stellar-sdk */
 import {
-  /* TODO (1): import anything you'll need from the stellar-sdk */
   Asset,
   BASE_FEE,
+  Horizon,
   Keypair,
   Networks,
   Operation,
-  Server,
   TransactionBuilder,
-} from 'stellar-sdk';
+} from '@stellar/stellar-sdk';
 
 /* TODO (2): create and fund all the accounts you'll need */
 const questKeypair = Keypair.fromSecret('SECRET_KEY_HERE');
@@ -22,7 +22,7 @@ await Promise.all(
     const response = await fetch(friendbotUrl);
 
     // // Optional Looking at the responses from fetch.
-    // let json = await response.json()
+    // const json = await response.json()
     // console.log(json)
 
     // Check that the response is OK, and give a confirmation message.
@@ -35,7 +35,7 @@ await Promise.all(
 );
 
 /* TODO (3): setup the server, account for the transaction, and your custom asset */
-const server = new Server('https://horizon-testnet.stellar.org');
+const server = new Horizon.Server('https://horizon-testnet.stellar.org');
 const questAccount = await server.loadAccount(questKeypair.publicKey());
 
 const pathAsset = new Asset('PATH', issuerKeypair.publicKey());

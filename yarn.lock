@@ -289,6 +289,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@stellar/stellar-sdk@npm:^11.1.0":
+  version: 11.1.0
+  resolution: "@stellar/stellar-sdk@npm:11.1.0"
+  dependencies:
+    "@stellar/stellar-base": "npm:10.0.1"
+    axios: "npm:^1.6.0"
+    bignumber.js: "npm:^9.1.2"
+    eventsource: "npm:^2.0.2"
+    randombytes: "npm:^2.1.0"
+    toml: "npm:^3.0.0"
+    urijs: "npm:^1.19.1"
+  checksum: d592e907e5221775b2291f60827fa2d79e990f6e9d3c015cd717960476d9e27833cc45c665ec078f72db3cc28edbcc6e4cf2c4e24016ec42cfd46102c70f7ccc
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:2":
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
@@ -326,12 +341,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.10.5":
-  version: 20.10.5
-  resolution: "@types/node@npm:20.10.5"
+"@types/node@npm:^20.10.6":
+  version: 20.10.6
+  resolution: "@types/node@npm:20.10.6"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: be30609aae0bfe492097815f166ccc07f465220cb604647fa4e5ec05a1d16c012a41b82b5f11ecfe2485cbb479d4d20384b95b809ca0bcff6d94d5bbafa645bb
+  checksum: 6692ccfa8552ef60c4069fda3c8de726c23e8d403cdf788e3c7efa769987e80fbda5f02723dd857f9de7df24a5fa40b3ed4580ec3c5cbac04eba44cf7b2ab1dc
   languageName: node
   linkType: hard
 
@@ -2813,28 +2828,13 @@ __metadata:
   resolution: "stellar-quest-solution@workspace:."
   dependencies:
     "@biomejs/biome": "npm:^1.4.1"
-    "@types/node": "npm:^20.10.5"
+    "@stellar/stellar-sdk": "npm:^11.1.0"
+    "@types/node": "npm:^20.10.6"
     nft.storage: "npm:^7.1.1"
     soroban-client: "npm:^1.0.0"
-    stellar-sdk: "npm:^11.1.0"
     typescript: "npm:^5.3.3"
   languageName: unknown
   linkType: soft
-
-"stellar-sdk@npm:^11.1.0":
-  version: 11.1.0
-  resolution: "stellar-sdk@npm:11.1.0"
-  dependencies:
-    "@stellar/stellar-base": "npm:10.0.1"
-    axios: "npm:^1.6.0"
-    bignumber.js: "npm:^9.1.2"
-    eventsource: "npm:^2.0.2"
-    randombytes: "npm:^2.1.0"
-    toml: "npm:^3.0.0"
-    urijs: "npm:^1.19.1"
-  checksum: 07718ead15a496a589281ee8e9575486f5f2152fd3408f97800961955ede5aeefc10a7192dddaf14e9b6a5a3bde69cb31796beacd0d8c4d5f93af5b4e5cd2aaa
-  languageName: node
-  linkType: hard
 
 "stream-to-it@npm:^0.2.2, stream-to-it@npm:^0.2.3":
   version: 0.2.4

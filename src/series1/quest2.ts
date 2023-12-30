@@ -1,12 +1,12 @@
 import {
   Asset,
   BASE_FEE,
+  Horizon,
   Keypair,
   Networks,
   Operation,
-  Server,
   TransactionBuilder,
-} from 'stellar-sdk';
+} from '@stellar/stellar-sdk';
 
 /* TODO (3): setup the necessary keypairs here */
 const questKeypair = Keypair.fromSecret('SECRET_KEY_HERE');
@@ -19,7 +19,7 @@ await Promise.all(
     const response = await fetch(friendbotUrl);
 
     // // Optional Looking at the responses from fetch.
-    // let json = await response.json()
+    // const json = await response.json()
     // console.log(json)
 
     // Check that the response is OK, and give a confirmation message.
@@ -32,7 +32,7 @@ await Promise.all(
 );
 
 /* TODO (4): create your server here, and then use it to load your account */
-const server = new Server('https://horizon-testnet.stellar.org');
+const server = new Horizon.Server('https://horizon-testnet.stellar.org');
 const questAccount = await server.loadAccount(questKeypair.publicKey());
 
 const transaction = new TransactionBuilder(questAccount, {

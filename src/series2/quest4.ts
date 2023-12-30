@@ -1,13 +1,13 @@
 /* TODO (1): get your boilerplate ready, make sure you questKeypair is funded */
+/* grab everything you need from the sdk */
 import {
   BASE_FEE,
-  /* grab everything you need from the sdk */
+  Horizon,
   Keypair,
   Networks,
   Operation,
-  Server,
   TransactionBuilder,
-} from 'stellar-sdk';
+} from '@stellar/stellar-sdk';
 
 /* Tip: if you are building and submitting the two transactions necessary for
  * this quest separately, you'll want to log the public/secret keys for these
@@ -36,7 +36,7 @@ await Promise.all(
 );
 
 /* TODO (1): prepare your server and load an account from it */
-const server = new Server('https://horizon-testnet.stellar.org');
+const server = new Horizon.Server('https://horizon-testnet.stellar.org');
 const questAccount = await server.loadAccount(questKeypair.publicKey());
 
 const transaction = new TransactionBuilder(questAccount, {

@@ -2,13 +2,13 @@
 import {
   Asset,
   BASE_FEE,
+  Horizon,
   Keypair,
   MuxedAccount,
   Networks,
   Operation,
-  Server,
   TransactionBuilder,
-} from 'stellar-sdk';
+} from '@stellar/stellar-sdk';
 
 // Create two Keypairs: your Quest Account and the Family Account (which will
 // be receiving the payments).
@@ -39,7 +39,7 @@ await Promise.all(
 );
 
 // Connect to the testnet with the StellarSdk.
-const server = new Server('https://horizon-testnet.stellar.org');
+const server = new Horizon.Server('https://horizon-testnet.stellar.org');
 const questAccount = await server.loadAccount(questKeypair.publicKey());
 
 // Begin building the transaction. We will add the payment operations in a bit

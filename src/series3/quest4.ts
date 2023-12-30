@@ -5,12 +5,12 @@ import {
   type AuthFlag,
   AuthRevocableFlag,
   BASE_FEE,
+  Horizon,
   Keypair,
   Networks,
   Operation,
-  Server,
   TransactionBuilder,
-} from 'stellar-sdk';
+} from '@stellar/stellar-sdk';
 
 // don't forget to fund these accounts
 const questKeypair = Keypair.fromSecret('SECRET_KEY_HERE');
@@ -23,7 +23,7 @@ await Promise.all(
     const response = await fetch(friendbotUrl);
 
     // // Optional Looking at the responses from fetch.
-    // let json = await response.json()
+    // const json = await response.json()
     // console.log(json)
 
     // Check that the response is OK, and give a confirmation message.
@@ -35,7 +35,7 @@ await Promise.all(
   })
 );
 
-const server = new Server('https://horizon-testnet.stellar.org');
+const server = new Horizon.Server('https://horizon-testnet.stellar.org');
 const questAccount = await server.loadAccount(questKeypair.publicKey());
 
 /* TODO (1): set up your boilerplate above this line so you can build your transactions */
@@ -57,7 +57,7 @@ const transaction = new TransactionBuilder(questAccount, {
 transaction.sign(questKeypair);
 
 try {
-  let res = await server.submitTransaction(transaction);
+  const res = await server.submitTransaction(transaction);
   console.log(`Transaction Successful! Hash: ${res.hash}`);
 
   /* TODO (3): create an asset that will have clawbacks enabled */
@@ -92,8 +92,8 @@ try {
 
   paymentTransaction.sign(questKeypair, destinationKeypair);
 
-  res = await server.submitTransaction(paymentTransaction);
-  console.log(`Payment Successful! Hash: ${res.hash}`);
+  const paymentRes = await server.submitTransaction(paymentTransaction);
+  console.log(`Payment Successful! Hash: ${paymentRes.hash}`);
 
   /* TODO (4): build a transaction to claw back some or all of the custom asset */
   const clawbackTransaction = new TransactionBuilder(questAccount, {
@@ -113,8 +113,8 @@ try {
   /* TODO (5): sign and submit your final transaction */
   clawbackTransaction.sign(questKeypair);
 
-  res = await server.submitTransaction(clawbackTransaction);
-  console.log(`Clawback Successful! Hash: ${res.hash}`);
+  const clawbackRes = await server.submitTransaction(clawbackTransaction);
+  console.log(`Clawback Successful! Hash: ${clawbackRes.hash}`);
 } catch (error: any) {
   console.log(`${error}. More details:\n${JSON.stringify(error.response.data.extras, null, 2)}`);
 }

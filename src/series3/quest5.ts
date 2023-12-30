@@ -39,14 +39,14 @@ totalSendXLM = ceil(sendXLM / paymentPercent) = ceil(10,131,404,314) / stroop = 
 import {
   Asset,
   BASE_FEE,
+  Horizon,
   Keypair,
   LiquidityPoolAsset,
   Networks,
   Operation,
-  Server,
   TransactionBuilder,
   getLiquidityPoolId,
-} from 'stellar-sdk';
+} from '@stellar/stellar-sdk';
 
 /* TODO (1): fill in the boilerplate below this line */
 const questKeypair = Keypair.fromSecret('SECRET_KEY_HERE');
@@ -58,7 +58,7 @@ await Promise.all(
     const response = await fetch(friendbotUrl);
 
     // // Optional Looking at the responses from fetch.
-    // let json = await response.json()
+    // const json = await response.json()
     // console.log(json)
 
     // Check that the response is OK, and give a confirmation message.
@@ -70,7 +70,7 @@ await Promise.all(
   })
 );
 
-const server = new Server('https://horizon-testnet.stellar.org');
+const server = new Horizon.Server('https://horizon-testnet.stellar.org');
 const questAccount = await server.loadAccount(questKeypair.publicKey());
 
 /* TODO (2): create an Asset and a LiquidityPoolAsset, don't forget to grab the LP ID */
@@ -113,13 +113,14 @@ const lpDepositTransaction = new TransactionBuilder(questAccount, {
 lpDepositTransaction.sign(questKeypair);
 
 try {
-  let res = await server.submitTransaction(lpDepositTransaction);
-  console.log(`LP Deposit Successful! Hash: ${res.hash}`);
+  const depositRes = await server.submitTransaction(lpDepositTransaction);
+  console.log(`LP Deposit Successful! Hash: ${depositRes.hash}`);
 
   /* TODO (5): create an account and build a transaction that makes a path
    * payment through the LP you've deposited reserves into */
   // First, a bit of getting ready before we can build the transaction
   const tradeKeypair = Keypair.random();
+  console.log(tradeKeypair.secret());
 
   await Promise.all(
     [tradeKeypair].map(async (kp) => {
@@ -128,7 +129,7 @@ try {
       const response = await fetch(friendbotUrl);
 
       // // Optional Looking at the responses from fetch.
-      // let json = await response.json()
+      // const json = await response.json()
       // console.log(json)
 
       // Check that the response is OK, and give a confirmation message.
@@ -168,8 +169,8 @@ try {
   /* TODO (6): build, sign, and submit this transaction */
   pathPaymentTransaction.sign(tradeKeypair);
 
-  res = await server.submitTransaction(pathPaymentTransaction);
-  console.log(`Path Payment Successful! Hash: ${res.hash}`);
+  const paymentRes = await server.submitTransaction(pathPaymentTransaction);
+  console.log(`Path Payment Successful! Hash: ${paymentRes.hash}`);
 
   /* TODO (7): withdraw all your reserves from the LP */
   const lpWithdrawTransaction = new TransactionBuilder(questAccount, {
@@ -190,8 +191,8 @@ try {
   /* TODO (8): build, sign, and submit this transaction */
   lpWithdrawTransaction.sign(questKeypair);
 
-  res = await server.submitTransaction(lpWithdrawTransaction);
-  console.log(`LP Withdraw Successful! Hash: ${res.hash}`);
+  const withdrawRes = await server.submitTransaction(lpWithdrawTransaction);
+  console.log(`LP Withdraw Successful! Hash: ${withdrawRes.hash}`);
 } catch (error: any) {
   console.log(`${error}. More details:\n${JSON.stringify(error.response.data.extras, null, 2)}`);
 }

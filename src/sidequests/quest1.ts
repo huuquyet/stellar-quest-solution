@@ -2,12 +2,12 @@
 import {
   Asset,
   BASE_FEE,
+  Horizon,
   Keypair,
   Networks,
   Operation,
-  Server,
   TransactionBuilder,
-} from 'stellar-sdk';
+} from '@stellar/stellar-sdk';
 
 // Generate two Keypairs: a sender, and a destination.
 const senderKeypair = Keypair.random();
@@ -24,7 +24,7 @@ await Promise.all(
     const response = await fetch(friendbotUrl);
 
     // // Optional Looking at the responses from fetch.
-    // let json = await response.json()
+    // const json = await response.json()
     // console.log(json)
 
     // Check that the response is OK, and give a confirmation message.
@@ -37,7 +37,7 @@ await Promise.all(
 );
 
 // Connect to the testnet with the StellarSdk.
-const server = new Server('https://horizon-testnet.stellar.org');
+const server = new Horizon.Server('https://horizon-testnet.stellar.org');
 const senderAccount = await server.loadAccount(senderKeypair.publicKey());
 
 // Build the inner transaction. This will be the transaction where the payment is actually made.
@@ -71,7 +71,7 @@ await Promise.all(
     const response = await fetch(friendbotUrl);
 
     // // Optional Looking at the responses from fetch.
-    // let json = await response.json()
+    // const json = await response.json()
     // console.log(json)
 
     // Check that the response is OK, and give a confirmation message.
