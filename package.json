@@ -34,12 +34,11 @@
   },
   "dependencies": {
     "@stellar/stellar-sdk": "^11.1.0",
-    "nft.storage": "^7.1.1",
-    "soroban-client": "^1.0.0"
+    "nft.storage": "^7.1.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.4.1",
-    "@types/node": "^20.10.6",
+    "@biomejs/biome": "^1.5.0",
+    "@types/node": "^20.10.7",
     "typescript": "^5.3.3"
   },
   "packageManager": "yarn@4.0.2"
