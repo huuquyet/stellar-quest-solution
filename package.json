@@ -30,18 +30,16 @@
     "quest35": "tsc && yarn node dist/series3/quest5",
     "sidequest1": "tsc && yarn node dist/sidequests/quest1",
     "sidequest2": "tsc && yarn node dist/sidequests/quest2",
-    "sidequest3": "tsc && yarn node dist/sidequests/quest3",
-    "skirmish13": "tsc && yarn node dist/soroban/skirmish13",
-    "skirmish14": "tsc && yarn node dist/soroban/skirmish14"
+    "sidequest3": "tsc && yarn node dist/sidequests/quest3"
   },
   "dependencies": {
-    "@stellar/stellar-sdk": "^11.2.0",
+    "@stellar/stellar-sdk": "^11.2.1",
     "nft.storage": "^7.1.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.5.1",
-    "@types/node": "^20.11.0",
+    "@biomejs/biome": "^1.5.3",
+    "@types/node": "^20.11.16",
     "typescript": "^5.3.3"
   },
-  "packageManager": "yarn@4.0.2"
+  "packageManager": "yarn@4.1.0"
 }
