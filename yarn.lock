@@ -284,45 +284,45 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stellar/js-xdr@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "@stellar/js-xdr@npm:3.0.1"
-  checksum: 10c0/2c3780c39e273bd2eabcfe73966aa0303307885964c1ee1b00e2e5035a86823cd24a368002f5cedea9265ed2540e613ba5c7247abb60cdcf8783cbc611283ef8
+"@stellar/js-xdr@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "@stellar/js-xdr@npm:3.1.0"
+  checksum: 10c0/1b483355e42fe0e982fd46e1652c3cad85747061f2a950b95f0ea929ade6107e24755d0a96dad6e47a6f24549a6b6689f34a133914b2334ef634dc81734f36c4
   languageName: node
   linkType: hard
 
-"@stellar/stellar-base@npm:^10.0.2":
-  version: 10.0.2
-  resolution: "@stellar/stellar-base@npm:10.0.2"
+"@stellar/stellar-base@npm:^11.0.0":
+  version: 11.0.0
+  resolution: "@stellar/stellar-base@npm:11.0.0"
   dependencies:
-    "@stellar/js-xdr": "npm:^3.0.1"
+    "@stellar/js-xdr": "npm:^3.1.0"
     base32.js: "npm:^0.1.0"
     bignumber.js: "npm:^9.1.2"
     buffer: "npm:^6.0.3"
     sha.js: "npm:^2.3.6"
-    sodium-native: "npm:^4.0.5"
+    sodium-native: "npm:^4.0.8"
     tweetnacl: "npm:^1.0.3"
     typescript: "npm:^5.3.3"
   dependenciesMeta:
     sodium-native:
       optional: true
-  checksum: 10c0/90593e1f45cbde740a5f3be58739c13a65453dd3058f0726dffa66e80b84faef9c49f943b8c4dd11e2a078f1a77534faef7cda00e50251f05909a4a66e53e140
+  checksum: 10c0/0d984ee36d2998a2850dce177f5c962f09ea2d8b0ef3c20b0cf62711eaee855b40dc8a37b369b43a787bbdcd766d703cbbe5eb137b0fe96d9483492fbcea3b97
   languageName: node
   linkType: hard
 
-"@stellar/stellar-sdk@npm:^11.2.1":
-  version: 11.2.1
-  resolution: "@stellar/stellar-sdk@npm:11.2.1"
+"@stellar/stellar-sdk@npm:^11.2.2":
+  version: 11.2.2
+  resolution: "@stellar/stellar-sdk@npm:11.2.2"
   dependencies:
-    "@stellar/stellar-base": "npm:^10.0.2"
-    axios: "npm:^1.6.5"
+    "@stellar/stellar-base": "npm:^11.0.0"
+    axios: "npm:^1.6.7"
     bignumber.js: "npm:^9.1.2"
     eventsource: "npm:^2.0.2"
     randombytes: "npm:^2.1.0"
     toml: "npm:^3.0.0"
     typescript: "npm:^5.3.3"
     urijs: "npm:^1.19.1"
-  checksum: 10c0/318b9b0f612bb3c290bedf0f9e55363ec0fa970cc8096a13644fedf595c28e4d242e82c5f0a983e843ed5fe599a404b2ee85a33b0a9e8ba5e23b48ff6674e98d
+  checksum: 10c0/51a1ffec39c2d8bf7d6358ad3cb49170a8094500b0027beb0fdb19d0e12f4a5f938fedcde14dc964cd6362a0cc001cba325d2bc81b04f127dc589edf3124a04c
   languageName: node
   linkType: hard
 
@@ -363,12 +363,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.11.16":
-  version: 20.11.16
-  resolution: "@types/node@npm:20.11.16"
+"@types/node@npm:^20.11.17":
+  version: 20.11.17
+  resolution: "@types/node@npm:20.11.17"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10c0/4886b90278e9c877a84efd3edd4667cd990e032d77268d2a798b99ebc1901ea336fa7dfbe9eaf4ad6ad1da9ce2ec31baf300038a3905838692362eb19904ebde
+  checksum: 10c0/1f30dae80b416cbf38f133a619ffb0e9fb9e7bc58f82d900bf73816ae5781740c4640892bf5971dd9c12570d5d05241646be3e7540bb4e059322ec6af4e51e15
   languageName: node
   linkType: hard
 
@@ -600,14 +600,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^1.6.5":
-  version: 1.6.5
-  resolution: "axios@npm:1.6.5"
+"axios@npm:^1.6.7":
+  version: 1.6.7
+  resolution: "axios@npm:1.6.7"
   dependencies:
     follow-redirects: "npm:^1.15.4"
     form-data: "npm:^4.0.0"
     proxy-from-env: "npm:^1.1.0"
-  checksum: 10c0/aeb9acf87590d8aa67946072ced38e01ca71f5dfe043782c0ccea667e5dd5c45830c08afac9be3d7c894f09684b8ab2a458f497d197b73621233bcf202d9d468
+  checksum: 10c0/131bf8e62eee48ca4bd84e6101f211961bf6a21a33b95e5dfb3983d5a2fe50d9fffde0b57668d7ce6f65063d3dc10f2212cbcb554f75cfca99da1c73b210358d
   languageName: node
   linkType: hard
 
@@ -2754,13 +2754,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sodium-native@npm:^4.0.5":
-  version: 4.0.6
-  resolution: "sodium-native@npm:4.0.6"
+"sodium-native@npm:^4.0.8":
+  version: 4.0.8
+  resolution: "sodium-native@npm:4.0.8"
   dependencies:
     node-gyp: "npm:latest"
     node-gyp-build: "npm:^4.6.0"
-  checksum: 10c0/6ca4de2f934bdc5408460363afb7c17777a20f626653701c2f87bda34f601498cf4fa82156f03bbb58f1ce5d95d9194c74c47b882875588f9f36c44abc9ff325
+  checksum: 10c0/3047f995cbcc241e3af4ae95dcdf7ff1efc45eeda0649f5713b9358ab63f90e612f5bd15de38a9966a94473b6d72d385d1abbd86052c8d08b0a898d5f59faae2
   languageName: node
   linkType: hard
 
@@ -2819,8 +2819,8 @@ __metadata:
   resolution: "stellar-quest-solution@workspace:."
   dependencies:
     "@biomejs/biome": "npm:^1.5.3"
-    "@stellar/stellar-sdk": "npm:^11.2.1"
-    "@types/node": "npm:^20.11.16"
+    "@stellar/stellar-sdk": "npm:^11.2.2"
+    "@types/node": "npm:^20.11.17"
     nft.storage: "npm:^7.1.1"
     typescript: "npm:^5.3.3"
   languageName: unknown
