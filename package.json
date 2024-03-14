@@ -37,9 +37,9 @@
     "nft.storage": "^7.1.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.5.3",
-    "@types/node": "^20.11.17",
-    "typescript": "^5.3.3"
+    "@biomejs/biome": "^1.6.1",
+    "@types/node": "^20.11.27",
+    "typescript": "^5.4.2"
   },
-  "packageManager": "yarn@4.1.0"
+  "packageManager": "yarn@4.1.1"
 }

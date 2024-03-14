@@ -40,7 +40,7 @@ const transaction = new TransactionBuilder(questAccount, {
 })
   .addOperation(
     Operation.bumpSequence({
-      bumpTo: (parseInt(questAccount.sequence) + 100).toString(),
+      bumpTo: (Number.parseInt(questAccount.sequence) + 100).toString(),
     })
   )
   .setTimeout(30)
@@ -64,7 +64,7 @@ try {
    * the first transaction has already incremented the sequence by one. */
   const bumpedAccount = new Account(
     questKeypair.publicKey(),
-    (parseInt(questAccount.sequence) + 99).toString()
+    (Number.parseInt(questAccount.sequence) + 99).toString()
   );
 
   /* TODO (4): Complete this transaction with the operation of your choosing */
