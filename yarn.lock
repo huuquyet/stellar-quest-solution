@@ -40,97 +40,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@biomejs/biome@npm:^1.6.1":
-  version: 1.6.1
-  resolution: "@biomejs/biome@npm:1.6.1"
-  dependencies:
-    "@biomejs/cli-darwin-arm64": "npm:1.6.1"
-    "@biomejs/cli-darwin-x64": "npm:1.6.1"
-    "@biomejs/cli-linux-arm64": "npm:1.6.1"
-    "@biomejs/cli-linux-arm64-musl": "npm:1.6.1"
-    "@biomejs/cli-linux-x64": "npm:1.6.1"
-    "@biomejs/cli-linux-x64-musl": "npm:1.6.1"
-    "@biomejs/cli-win32-arm64": "npm:1.6.1"
-    "@biomejs/cli-win32-x64": "npm:1.6.1"
-  dependenciesMeta:
-    "@biomejs/cli-darwin-arm64":
-      optional: true
-    "@biomejs/cli-darwin-x64":
-      optional: true
-    "@biomejs/cli-linux-arm64":
-      optional: true
-    "@biomejs/cli-linux-arm64-musl":
-      optional: true
-    "@biomejs/cli-linux-x64":
-      optional: true
-    "@biomejs/cli-linux-x64-musl":
-      optional: true
-    "@biomejs/cli-win32-arm64":
-      optional: true
-    "@biomejs/cli-win32-x64":
-      optional: true
-  bin:
-    biome: bin/biome
-  checksum: 10c0/789580c9aa7e0661a643e82de85f15bcc4ef0c79a099204f234b3769cface5c604b137260a4a60767ab3a692bd7ac19e2de1fc75537ec14e7698f0b6a133cfef
-  languageName: node
-  linkType: hard
-
-"@biomejs/cli-darwin-arm64@npm:1.6.1":
-  version: 1.6.1
-  resolution: "@biomejs/cli-darwin-arm64@npm:1.6.1"
-  conditions: os=darwin & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"@biomejs/cli-darwin-x64@npm:1.6.1":
-  version: 1.6.1
-  resolution: "@biomejs/cli-darwin-x64@npm:1.6.1"
-  conditions: os=darwin & cpu=x64
-  languageName: node
-  linkType: hard
-
-"@biomejs/cli-linux-arm64-musl@npm:1.6.1":
-  version: 1.6.1
-  resolution: "@biomejs/cli-linux-arm64-musl@npm:1.6.1"
-  conditions: os=linux & cpu=arm64 & libc=musl
-  languageName: node
-  linkType: hard
-
-"@biomejs/cli-linux-arm64@npm:1.6.1":
-  version: 1.6.1
-  resolution: "@biomejs/cli-linux-arm64@npm:1.6.1"
-  conditions: os=linux & cpu=arm64 & libc=glibc
-  languageName: node
-  linkType: hard
-
-"@biomejs/cli-linux-x64-musl@npm:1.6.1":
-  version: 1.6.1
-  resolution: "@biomejs/cli-linux-x64-musl@npm:1.6.1"
-  conditions: os=linux & cpu=x64 & libc=musl
-  languageName: node
-  linkType: hard
-
-"@biomejs/cli-linux-x64@npm:1.6.1":
-  version: 1.6.1
-  resolution: "@biomejs/cli-linux-x64@npm:1.6.1"
-  conditions: os=linux & cpu=x64 & libc=glibc
-  languageName: node
-  linkType: hard
-
-"@biomejs/cli-win32-arm64@npm:1.6.1":
-  version: 1.6.1
-  resolution: "@biomejs/cli-win32-arm64@npm:1.6.1"
-  conditions: os=win32 & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"@biomejs/cli-win32-x64@npm:1.6.1":
-  version: 1.6.1
-  resolution: "@biomejs/cli-win32-x64@npm:1.6.1"
-  conditions: os=win32 & cpu=x64
-  languageName: node
-  linkType: hard
-
 "@ipld/car@npm:^3.0.1, @ipld/car@npm:^3.2.3":
   version: 3.2.4
   resolution: "@ipld/car@npm:3.2.4"
@@ -284,45 +193,43 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stellar/js-xdr@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "@stellar/js-xdr@npm:3.1.0"
-  checksum: 10c0/1b483355e42fe0e982fd46e1652c3cad85747061f2a950b95f0ea929ade6107e24755d0a96dad6e47a6f24549a6b6689f34a133914b2334ef634dc81734f36c4
+"@stellar/js-xdr@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "@stellar/js-xdr@npm:3.1.1"
+  checksum: 10c0/ba3f8327ea2eac6fc62ef2f87b90b13038e59cc397d837bc722484f682ae2d2aae7626ed91d16d75c20388af29cc7248919d5c64b40fdfb0cfb44cefde6e69e2
   languageName: node
   linkType: hard
 
-"@stellar/stellar-base@npm:^11.0.0":
-  version: 11.0.0
-  resolution: "@stellar/stellar-base@npm:11.0.0"
+"@stellar/stellar-base@npm:^11.0.1":
+  version: 11.0.1
+  resolution: "@stellar/stellar-base@npm:11.0.1"
   dependencies:
-    "@stellar/js-xdr": "npm:^3.1.0"
+    "@stellar/js-xdr": "npm:^3.1.1"
     base32.js: "npm:^0.1.0"
     bignumber.js: "npm:^9.1.2"
     buffer: "npm:^6.0.3"
     sha.js: "npm:^2.3.6"
-    sodium-native: "npm:^4.0.8"
+    sodium-native: "npm:^4.0.10"
     tweetnacl: "npm:^1.0.3"
-    typescript: "npm:^5.3.3"
   dependenciesMeta:
     sodium-native:
       optional: true
-  checksum: 10c0/0d984ee36d2998a2850dce177f5c962f09ea2d8b0ef3c20b0cf62711eaee855b40dc8a37b369b43a787bbdcd766d703cbbe5eb137b0fe96d9483492fbcea3b97
+  checksum: 10c0/bcd308ec13dec9198159d93f36b759db01a3a8f7fa14c07d54e24f1798ef5d1f39534e02dc8a00e6888d7698ae030b518627f73f51da79566d67719a70873160
   languageName: node
   linkType: hard
 
-"@stellar/stellar-sdk@npm:^11.2.2":
-  version: 11.2.2
-  resolution: "@stellar/stellar-sdk@npm:11.2.2"
+"@stellar/stellar-sdk@npm:^11.3.0":
+  version: 11.3.0
+  resolution: "@stellar/stellar-sdk@npm:11.3.0"
   dependencies:
-    "@stellar/stellar-base": "npm:^11.0.0"
-    axios: "npm:^1.6.7"
+    "@stellar/stellar-base": "npm:^11.0.1"
+    axios: "npm:^1.6.8"
     bignumber.js: "npm:^9.1.2"
     eventsource: "npm:^2.0.2"
     randombytes: "npm:^2.1.0"
     toml: "npm:^3.0.0"
-    typescript: "npm:^5.3.3"
     urijs: "npm:^1.19.1"
-  checksum: 10c0/51a1ffec39c2d8bf7d6358ad3cb49170a8094500b0027beb0fdb19d0e12f4a5f938fedcde14dc964cd6362a0cc001cba325d2bc81b04f127dc589edf3124a04c
+  checksum: 10c0/7850a1894a236b4d5d5c1d942a7c950faf25a508ba98baf426a24a02e0e335419d5aae9926a6e69333a5c41ccd384feeae1956ed847b10d4046ad102e9da5fd2
   languageName: node
   linkType: hard
 
@@ -354,21 +261,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:>=13.7.0":
-  version: 20.9.4
-  resolution: "@types/node@npm:20.9.4"
+"@types/node@npm:>=13.7.0, @types/node@npm:^20.12.7":
+  version: 20.12.7
+  resolution: "@types/node@npm:20.12.7"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10c0/c8b48ace4c7e17715fa901201c98275f8e5268cf5895a8d149777eb0ec6c3ef6c831ff3917e92da5453a5dbe13f230caa50b348a0601b0d50eb9e628010c0364
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^20.11.27":
-  version: 20.11.27
-  resolution: "@types/node@npm:20.11.27"
-  dependencies:
-    undici-types: "npm:~5.26.4"
-  checksum: 10c0/ec40bea80c60a12b39bd0da9b16333237a84c67ae83c8aa382b88381ae3948943bf6af969442e209270ad3e109f301a6b01ab243f80bd0e69673a877425f9418
+  checksum: 10c0/dce80d63a3b91892b321af823d624995c61e39c6a223cc0ac481a44d337640cc46931d33efb3beeed75f5c85c3bda1d97cef4c5cd4ec333caf5dee59cff6eca0
   languageName: node
   linkType: hard
 
@@ -600,14 +498,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^1.6.7":
-  version: 1.6.7
-  resolution: "axios@npm:1.6.7"
+"axios@npm:^1.6.8":
+  version: 1.6.8
+  resolution: "axios@npm:1.6.8"
   dependencies:
-    follow-redirects: "npm:^1.15.4"
+    follow-redirects: "npm:^1.15.6"
     form-data: "npm:^4.0.0"
     proxy-from-env: "npm:^1.1.0"
-  checksum: 10c0/131bf8e62eee48ca4bd84e6101f211961bf6a21a33b95e5dfb3983d5a2fe50d9fffde0b57668d7ce6f65063d3dc10f2212cbcb554f75cfca99da1c73b210358d
+  checksum: 10c0/0f22da6f490335479a89878bc7d5a1419484fbb437b564a80c34888fc36759ae4f56ea28d55a191695e5ed327f0bad56e7ff60fb6770c14d1be6501505d47ab9
   languageName: node
   linkType: hard
 
@@ -1067,7 +965,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.15.4":
+"follow-redirects@npm:^1.15.6":
   version: 1.15.6
   resolution: "follow-redirects@npm:1.15.6"
   peerDependenciesMeta:
@@ -2232,14 +2130,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-gyp-build@npm:^4.6.0":
-  version: 4.7.1
-  resolution: "node-gyp-build@npm:4.7.1"
+"node-gyp-build@npm:^4.8.0":
+  version: 4.8.0
+  resolution: "node-gyp-build@npm:4.8.0"
   bin:
     node-gyp-build: bin.js
     node-gyp-build-optional: optional.js
     node-gyp-build-test: build-test.js
-  checksum: 10c0/b8e4a3f889237cd08edde3775e2b4e1e39a0571580584e33e29979f0c532a254ce3c5ec9435bd526254ad0b3f0b4a7e7fe14e53bd400f6ea9445f3bfd88a6b1e
+  checksum: 10c0/85324be16f81f0235cbbc42e3eceaeb1b5ab94c8d8f5236755e1435b4908338c65a4e75f66ee343cbcb44ddf9b52a428755bec16dcd983295be4458d95c8e1ad
   languageName: node
   linkType: hard
 
@@ -2754,13 +2652,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sodium-native@npm:^4.0.8":
-  version: 4.0.8
-  resolution: "sodium-native@npm:4.0.8"
+"sodium-native@npm:^4.0.10":
+  version: 4.1.1
+  resolution: "sodium-native@npm:4.1.1"
   dependencies:
     node-gyp: "npm:latest"
-    node-gyp-build: "npm:^4.6.0"
-  checksum: 10c0/3047f995cbcc241e3af4ae95dcdf7ff1efc45eeda0649f5713b9358ab63f90e612f5bd15de38a9966a94473b6d72d385d1abbd86052c8d08b0a898d5f59faae2
+    node-gyp-build: "npm:^4.8.0"
+  checksum: 10c0/7687554fc224bcd350a3b695de792d21b0c374d116d82306f16b5ff674c58f5f397667a1c977dd7e14bde2de4657b8bcd0bdd7cf435eb55173380c825754793f
   languageName: node
   linkType: hard
 
@@ -2818,11 +2716,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "stellar-quest-solution@workspace:."
   dependencies:
-    "@biomejs/biome": "npm:^1.6.1"
-    "@stellar/stellar-sdk": "npm:^11.2.2"
-    "@types/node": "npm:^20.11.27"
+    "@stellar/stellar-sdk": "npm:^11.3.0"
+    "@types/node": "npm:^20.12.7"
     nft.storage: "npm:^7.1.1"
-    typescript: "npm:^5.4.2"
+    typescript: "npm:^5.4.5"
   languageName: unknown
   linkType: soft
 
@@ -2996,43 +2893,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.3.3":
-  version: 5.3.3
-  resolution: "typescript@npm:5.3.3"
+"typescript@npm:^5.4.5":
+  version: 5.4.5
+  resolution: "typescript@npm:5.4.5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/e33cef99d82573624fc0f854a2980322714986bc35b9cb4d1ce736ed182aeab78e2cb32b385efa493b2a976ef52c53e20d6c6918312353a91850e2b76f1ea44f
+  checksum: 10c0/2954022ada340fd3d6a9e2b8e534f65d57c92d5f3989a263754a78aba549f7e6529acc1921913560a4b816c46dce7df4a4d29f9f11a3dc0d4213bb76d043251e
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.4.2":
-  version: 5.4.2
-  resolution: "typescript@npm:5.4.2"
+"typescript@patch:typescript@npm%3A^5.4.5#optional!builtin<compat/typescript>":
+  version: 5.4.5
+  resolution: "typescript@patch:typescript@npm%3A5.4.5#optional!builtin<compat/typescript>::version=5.4.5&hash=5adc0c"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/583ff68cafb0c076695f72d61df6feee71689568179fb0d3a4834dac343df6b6ed7cf7b6f6c801fa52d43cd1d324e2f2d8ae4497b09f9e6cfe3d80a6d6c9ca52
-  languageName: node
-  linkType: hard
-
-"typescript@patch:typescript@npm%3A^5.3.3#optional!builtin<compat/typescript>":
-  version: 5.3.3
-  resolution: "typescript@patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 10c0/1d0a5f4ce496c42caa9a30e659c467c5686eae15d54b027ee7866744952547f1be1262f2d40de911618c242b510029d51d43ff605dba8fb740ec85ca2d3f9500
-  languageName: node
-  linkType: hard
-
-"typescript@patch:typescript@npm%3A^5.4.2#optional!builtin<compat/typescript>":
-  version: 5.4.2
-  resolution: "typescript@patch:typescript@npm%3A5.4.2#optional!builtin<compat/typescript>::version=5.4.2&hash=5adc0c"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 10c0/fcf6658073d07283910d9a0e04b1d5d0ebc822c04dbb7abdd74c3151c7aa92fcddbac7d799404e358197222006ccdc4c0db219d223d2ee4ccd9e2b01333b49be
+  checksum: 10c0/db2ad2a16ca829f50427eeb1da155e7a45e598eec7b086d8b4e8ba44e5a235f758e606d681c66992230d3fc3b8995865e5fd0b22a2c95486d0b3200f83072ec9
   languageName: node
   linkType: hard
 

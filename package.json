@@ -10,7 +10,8 @@
   "scripts": {
     "doctor": "yarn dlx @yarnpkg/doctor",
     "clean": "yarn cache clean --all && git clean -xdf",
-    "vscode": "yarn install && yarn dlx @yarnpkg/sdks vscode",
+    "update": "yarn upgrade-interactive",
+    "vscode": "yarn dlx @yarnpkg/sdks vscode",
     "lint": "yarn dlx @biomejs/biome check --apply .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "quest11": "tsc && yarn node dist/series1/quest1",
@@ -33,13 +34,12 @@
     "sidequest3": "tsc && yarn node dist/sidequests/quest3"
   },
   "dependencies": {
-    "@stellar/stellar-sdk": "^11.2.2",
+    "@stellar/stellar-sdk": "^11.3.0",
     "nft.storage": "^7.1.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.6.1",
-    "@types/node": "^20.11.27",
-    "typescript": "^5.4.2"
+    "@types/node": "^20.12.7",
+    "typescript": "^5.4.5"
   },
   "packageManager": "yarn@4.1.1"
 }
